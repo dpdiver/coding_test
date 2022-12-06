@@ -36,10 +36,10 @@ m = int(input())
 for _ in range(m):
     command = sys.stdin.readline().split()
     if command[0]=='L':
-        if st1: # 커서가 맨 앞이 아닌 경우
+        if st1: # 커서가 맨앞이 아님
             st2.append(st1.pop()) 
     elif command[0]=='D':
-        if st2: # 커서가 맨 뒤가 아닌 경우
+        if st2: # 커서가 맨 뒤가 아
             st1.append(st2.pop())
     elif command[0]=='B':
         if st1:
