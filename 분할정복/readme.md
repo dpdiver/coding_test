@@ -11,6 +11,7 @@
 
 <br/>
 ```python
+
 def merge_sort(arr):
     if len(arr) < 2:
         return arr
@@ -31,4 +32,5 @@ def merge_sort(arr):
     merged_arr += low_arr[l:]
     merged_arr += high_arr[h:]
     return merged_arr
+    
 ```
