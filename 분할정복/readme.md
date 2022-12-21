@@ -13,23 +13,28 @@
 
  ```python
 def merge_sort(arr):
+    # 종료조건
     if len(arr) < 2:
         return arr
-
+    # 정렬 
     mid = len(arr) // 2
-    low_arr = merge_sort(arr[:mid])
-    high_arr = merge_sort(arr[mid:])
-
+    arr1 = arr[:mid]
+    arr2 = arr[mid:]
+    # 재귀호출
+    merge_sort(arr1)
+    merge_sort(arr2)
+    # 병합
     merged_arr = []
-    l = h = 0
-    while l < len(low_arr) and h < len(high_arr):
-        if low_arr[l] < high_arr[h]:
-            merged_arr.append(low_arr[l])
-            l += 1
+    i = j = 0
+    while i < len(arr1) and j < len(arr2):
+        if arr1[i] < arr2[j]: 
+            merged_arr.append(arr[1])
+            i += 1
         else:
-            merged_arr.append(high_arr[h])
-            h += 1
-    merged_arr += low_arr[l:]
-    merged_arr += high_arr[h:]
+            merged_arr.append(arr2[j])
+            j += 1
+    # 결합하고 남은 원소를 추가
+    merged_arr += arr1[i:]
+    merged_arr += arr2[j:]
     return merged_arr
  ```
